@@ -27,13 +27,18 @@
       }
       if (Da.value != date){
         console.log("illegal date");
-        document.getElementById("date").innerHTML = "illegal date";
+        document.getElementByid("dates").innerHTML = "illegal date";
         return false;
       }if (Ad.value != char){
         console.log("illegal address");
+        document.getElementById("addresses").innerHTML = "illegal address";
         return false;
       }if (Em.value != Email){
-
+        document.getElementById('Emails').innerHTML = "illegal email";
+        return false;
+      }if (Po.value != char){
+        document.getElementById('Postcodes').innerHTML = "illegal postcoode";
+        return false;
       }
 
     }
@@ -45,11 +50,11 @@
     }
     </script>
     <form onsubmit = "return validate()" >
-      <p>Name: <input type="text" id="name" ><div class="name"></div> </p>
-      <p>DateOfBirth:  <input type="text" id="date"><div class="date"></div></p>
-      <p>Address: <input type="text" id="address" > <div class="address"></div>  </p>
-      <p>Postcode:  <input type="text" name="Postcode" > </p>
-      <p>Email: <input type="text" name="email">  </p>
+      <p>Name: <input type="text" id="name" ><div id="names"></div> </p>
+      <p>DateOfBirth:  <input type="text" id="date"><div id="dates"></div></p>
+      <p>Address: <input type="text" id="address" > <div id="addresses"></div>  </p>
+      <p>Postcode:  <input type="text" name="Postcode" >  <div id="Postcodes"></div> </p>
+      <p>Email: <input type="text" name="email"> <div id="emails"> </div> </p>
       <button type="submit" name="button">submit</button>
     </form>
   </body>

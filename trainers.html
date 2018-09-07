@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+
+    <script src="data.js" id="data">
+    </script>
+<script>
+//wanted to originally use a for loop to iterate through all the for loops. but decided to try using if statements to  call a position in the object array.
+function GetJson(){
+
+var members = data["members"];
+var input = document.getElementById("Name").inn;
+
+        if (input == "Matt") {
+          console.log(1);
+          document.getElementById('QAC').innerHTML = data["members"][0];
+          // var para = document.createElement("p");
+          //
+          // var app = "Name:" + data[member].name;
+          // para.appendChild(document.createTextNode(app));
+          // var entry = document.getElementById("QAC");
+          // element.appendChild(para);
+        } if (input == "Dev") {
+          console.log(2);
+          document.getElementById("QAC").innerHTML = data["members"][1];
+        }if (input == "Shafeeq"){
+          console.log(3);
+          document.getElementById("QAC").innerHTML = data["members"][2];
+        }
+      }
+</script>
+<form class="" onSubmit="return GetJson()" method="post">
+  <input type="text" placeholder="Enter name" id="Name" value="">
+
+  <button type="submit" name="Submit">submit</button>
+</form>
+<div id="QAC">
+</div>
+</body>
+</html>

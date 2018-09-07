@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <style media="screen">
+  .dropBut{
+    color: grey;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+  }
+  .dropdown-content2 {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 5px;
+    display: block;
+  }
+
+
+    .show{display:block;}
+
+    .dropdown-content a:hover{background-color: yellow;}
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function menu(){
+        document.getElementById("dropdown1").classList.toggle("show");
+        document.getElementById("dropdown2").classList.toggle("show");
+      }
+
+      window.onmouseleave =function (event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+    <div class="dropdown">
+      <button onmouseleave="menu()" class="dropBut">Forms</button>
+      <div id="dropdown1" class="dropdown-content">
+        <a href="EntryForm.html">Entry Form</a>
+        <a href="FormData.html">Form Data</a>
+      </div>
+      <button onmouseleave="menu()" class="dropBut">JSON</button>
+      <div id="dropdown2" class="dropdown-content2">
+        <a href="trainers.html"> Trainers</a>
+    </div>
+  </div>
+  <div class="dropdown">
+
+  </div>
+
+  </body>
+</html>

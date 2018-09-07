@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    //it will check if the value is equal to the regex if it isn't will return illegalname.
+    function validate(){
+      console.log("running");
+      var alphaExp = /^[a-zA-Z]+$/;
+      var date = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+      var email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}$/;
+      var char = /^ \d{1,2}\/\d{1,2}\/\d{4}$/;
+      var Na = document.getElementById('name');
+      var Da = document.getElementById('date');
+      var Ad = document.getElementById('address');
+      var Po = document.getElementById('Postcode');
+      var Em = document.getElementById('email');
+      var text = "";
+      console.log(Na.value);
+    if (Na.value != alphaExp) {
+        console.log('illegal name');
+        document.getElementsByClassName("name").innerHTML = "illegal name";
+        return false;
+      }
+      if (Da.value != date){
+        console.log("illegal date");
+        document.getElementById("date").innerHTML = "illegal date";
+        return false;
+      }if (Ad.value != char){
+        console.log("illegal address");
+        return false;
+      }if (Em.value != Email){
+
+      }
+
+    }
+    function submit(){
+      if (validate() == null){
+        event.onclick.document.getElementById(submit);
+
+      }
+    }
+    </script>
+    <form onsubmit = "return validate()" >
+      <p>Name: <input type="text" id="name" ><div class="name"></div> </p>
+      <p>DateOfBirth:  <input type="text" id="date"><div class="date"></div></p>
+      <p>Address: <input type="text" id="address" > <div class="address"></div>  </p>
+      <p>Postcode:  <input type="text" name="Postcode" > </p>
+      <p>Email: <input type="text" name="email">  </p>
+      <button type="submit" name="button">submit</button>
+    </form>
+  </body>
+</html>
